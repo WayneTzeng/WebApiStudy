@@ -23,8 +23,8 @@ function addItem() {
     const item = {
         //isComplete: false,
         Time: timeInMs,
-        ID: 1, //addIDTextbox.value.trim(),
-        StaffID: addStaffIDTextbox.value.trim(),
+        id: addStaffIDTextbox.value.trim(), //addIDTextbox.value.trim(),
+        //StaffID: addStaffIDTextbox.value.trim(),
         Department: addDepartmentTextbox.value.trim(),
         Name: addNameTextbox.value.trim(),
         Position: addPositionTextbox.value.trim(),

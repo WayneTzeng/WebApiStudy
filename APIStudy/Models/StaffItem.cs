@@ -8,9 +8,9 @@ namespace APIStudy.Models
     public class StaffItem
     {
         //[RegularExpression("[0-9]")]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        public int StaffID { get; set; }
+        //public int? StaffID { get; set; }
 
         public string Department { get; set; }
 
