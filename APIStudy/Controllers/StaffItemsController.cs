@@ -11,6 +11,7 @@ using Staff.Models;
 namespace APIStudy.Controllers
 {
     [Route("api/[controller]")]
+    //{action}
     [ApiController]
     public class StaffItemsController : ControllerBase
     {

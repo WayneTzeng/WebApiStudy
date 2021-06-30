@@ -8,16 +8,17 @@
 
 table {
     font-family: Arial, sans-serif;
-    border: 1px solid;
+    border: 15px solid ;
     border-collapse: collapse;
+    
 }
 
 th {
     background-color: #f8f8f8;
-    padding: 5px;
+    padding: 10px;
 }
 
 td {
     border: 1px solid;
-    padding: 5px;
+    padding: 10px;
 }

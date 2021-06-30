@@ -11,8 +11,9 @@ function getItems() {
 }
 
 function addItem() {
-    //var timeInMs = Date.now();
-    const addIDTextbox = document.getElementById('add-ID');
+    Timevalue = new Date();
+    var timeInMs = value;
+    const addStaffIDTextbox = document.getElementById('add-StaffID');
     const addDepartmentTextbox = document.getElementById('add-Department');
     const addNameTextbox = document.getElementById('add-Name');
     const addPositionTextbox = document.getElementById('add-Position');
@@ -20,8 +21,10 @@ function addItem() {
 
 
     const item = {
-        //isComplete: Date.now(),
-        ID: addIDTextbox.value.trim(),
+        //isComplete: false,
+        Time: timeInMs,
+        ID: 1, //addIDTextbox.value.trim(),
+        StaffID: addStaffIDTextbox.value.trim(),
         Department: addDepartmentTextbox.value.trim(),
         Name: addNameTextbox.value.trim(),
         Position: addPositionTextbox.value.trim(),
@@ -48,7 +51,7 @@ function addItem() {
         .catch(error => console.error('Unable to add item.', error));
 }
 
-function deleteItem(id) {
+function deleteItem(id ){
     fetch(`${uri}/${id}`, {
         method: 'DELETE'
     })
@@ -125,34 +128,38 @@ function _displayItems(data) {
 
         let td1 = tr.insertCell(0);
         //td1.appendChild(isCompleteCheckbox);
-        let textNodeisComplete = document.createTextNode(item.isComplete);
-        td1.appendChild(textNodeisComplete);
+        let textNodeTime = document.createTextNode(item.Time);
+        td1.appendChild(textNodeTime);
 
         let td2 = tr.insertCell(1);
         let textNodeid = document.createTextNode(item.id);
         td2.appendChild(textNodeid);
 
         let td3 = tr.insertCell(2);
-        let textNodedepartment = document.createTextNode(item.department);
-        td3.appendChild(textNodedepartment);
+        let textNodeid = document.createTextNode(item.StaffID);
+        td3.appendChild(textNodeid);
 
         let td4 = tr.insertCell(3);
-        let textNodename = document.createTextNode(item.name);
-        td4.appendChild(textNodename);
+        let textNodedepartment = document.createTextNode(item.department);
+        td4.appendChild(textNodedepartment);
 
         let td5 = tr.insertCell(4);
-        let textNodeposition = document.createTextNode(item.position);
-        td5.appendChild(textNodeposition);
+        let textNodename = document.createTextNode(item.name);
+        td5.appendChild(textNodename);
 
         let td6 = tr.insertCell(5);
-        let textNodeseniority = document.createTextNode(item.seniority);
-        td6.appendChild(textNodeseniority);
+        let textNodeposition = document.createTextNode(item.position);
+        td6.appendChild(textNodeposition);
 
         let td7 = tr.insertCell(6);
-        td7.appendChild(editButton);
+        let textNodeseniority = document.createTextNode(item.seniority);
+        td7.appendChild(textNodeseniority);
 
-        let td8 = tr.insertCell(7);
-        td8.appendChild(deleteButton);
+        let td8 = tr.insertCell(7)
+        td8.appendChild(editButton);
+
+        let td9 = tr.insertCell(8);
+        td9.appendChild(deleteButton);
 
 
     });

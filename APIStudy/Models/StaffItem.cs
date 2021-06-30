@@ -10,6 +10,8 @@ namespace APIStudy.Models
         //[RegularExpression("[0-9]")]
         public int Id { get; set; }
 
+        public int StaffID { get; set; }
+
         public string Department { get; set; }
 
         public string Name { get; set; }
@@ -17,7 +19,9 @@ namespace APIStudy.Models
         public string Position { get; set; }
 
         public string Seniority { get; set; }
-    
-        public DateTime IsComplete { get; set; }
+
+        public DateTime? Time { get; set; }
+
+
     }
 }
